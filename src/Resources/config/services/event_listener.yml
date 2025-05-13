@@ -1,0 +1,58 @@
+services:
+    bitbag_sylius_acl_plugin.menu.main_menu:
+        class: BitBag\SyliusAclPlugin\Menu\MainMenuBuilder
+        arguments:
+            - "@bitbag_sylius_acl_plugin.resolver.admin_permission"
+            - "@bitbag_sylius_acl_plugin.context.privilege.composite"
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.main, method: buildMenu, priority: -7777 }
+
+    bitbag_sylius_acl_plugin.menu.customer_show:
+        class: BitBag\SyliusAclPlugin\Menu\CustomerShowMenuBuilder
+        arguments:
+            - "@bitbag_sylius_acl_plugin.resolver.admin_permission"
+            - "@bitbag_sylius_acl_plugin.context.privilege.composite"
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.customer.show, method: buildMenu, priority: -7777 }
+
+    bitbag_sylius_acl_plugin.menu.order_show:
+        class: BitBag\SyliusAclPlugin\Menu\OrderShowMenuBuilder
+        arguments:
+            - "@bitbag_sylius_acl_plugin.resolver.admin_permission"
+            - "@bitbag_sylius_acl_plugin.context.privilege.composite"
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.order.show, method: buildMenu, priority: -7777 }
+
+    bitbag_sylius_acl_plugin.menu.permission_management:
+        class: BitBag\SyliusAclPlugin\Menu\PermissionManagementMenuBuilder
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.main, method: buildMenu }
+
+    bitbag_sylius_acl_plugin.event_listener.permission_checker:
+        class: BitBag\SyliusAclPlugin\EventListener\PermissionCheckerListener
+        arguments:
+            - "@bitbag_sylius_acl_plugin.resolver.admin_permission"
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+    bitbag_sylius_acl_plugin.block_event_listener.admin.layout.javascripts:
+        class: Sylius\Bundle\UiBundle\Block\BlockEventListener
+        arguments:
+            - '@@BitBagSyliusAclPlugin/Admin/_javascripts.html.twig'
+        tags:
+            - { name: kernel.event_listener, event: sonata.block.event.sylius.admin.layout.javascripts, method: onBlockEvent }
+
+    bitbag_sylius_acl_plugin.block_event_listener.admin.layout.stylesheets:
+        class: Sylius\Bundle\UiBundle\Block\BlockEventListener
+        arguments:
+            - '@@BitBagSyliusAclPlugin/Admin/_stylesheets.html.twig'
+        tags:
+            - { name: kernel.event_listener, event: sonata.block.event.sylius.admin.layout.stylesheets, method: onBlockEvent }
+
+    bitbag_sylius_acl_plugin.event_subscriber.resource_delete:
+        class: BitBag\SyliusAclPlugin\EventListener\ResourceDeleteSubscriber
+        arguments:
+            - "@router"
+            - "@request_stack"
+        tags:
+            - { name: kernel.event_subscriber, event: kernel.exception }

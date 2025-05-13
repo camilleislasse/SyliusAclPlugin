@@ -1,0 +1,14 @@
+services:
+    bitbag_sylius_acl_plugin.templating.helper.acl:
+        class: BitBag\SyliusAclPlugin\Templating\Helper\AclHelper
+        arguments:
+            - "@bitbag_sylius_acl_plugin.resolver.admin_permission"
+        tags:
+            - { name: templating.helper, alias: bitbag_acl }
+
+    bitbag_sylius_acl_plugin.twig.extension.acl:
+        class: BitBag\SyliusAclPlugin\Twig\AclExtension
+        arguments:
+            - "@bitbag_sylius_acl_plugin.templating.helper.acl"
+        tags:
+            - { name: twig.extension }

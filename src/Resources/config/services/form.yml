@@ -1,0 +1,36 @@
+services:
+    bitbag_sylius_acl_plugin.form.type.role:
+        class: BitBag\SyliusAclPlugin\Form\Type\RoleType
+        arguments:
+            - "%bitbag_sylius_acl_plugin.model.role.class%"
+            - '@bitbag_sylius_acl_plugin.form.data_transformer.form_transformer'
+            - ['bitbag']
+        tags:
+            - { name: form.type }
+
+    bitbag_sylius_acl_plugin.form.extension.admin_user_type:
+        class: BitBag\SyliusAclPlugin\Form\Extension\AdminUserTypeExtension
+        arguments:
+            - "%bitbag_sylius_acl_plugin.model.role.class%"
+        tags:
+            - { name: form.type_extension, extended_type: Sylius\Bundle\CoreBundle\Form\Type\User\AdminUserType }
+
+    bitbag_sylius_acl_plugin.form.type.translation.role:
+        class: BitBag\SyliusAclPlugin\Form\Type\Translation\RoleTranslationType
+        arguments:
+            - "%bitbag_sylius_acl_plugin.model.role_translation.class%"
+            - ['bitbag']
+        tags:
+            - { name: form.type }
+
+    bitbag_sylius_acl_plugin.form.type.permission_collection:
+        class: BitBag\SyliusAclPlugin\Form\Type\PermissionCollectionType
+        tags:
+            - { name: form.type }
+        arguments:
+            - "@bitbag_sylius_acl_plugin.context.privilege.composite"
+
+    bitbag_sylius_acl_plugin.form.data_transformer.form_transformer:
+        class: BitBag\SyliusAclPlugin\Form\Transformer\FormTransformer
+        arguments:
+            - "@bitbag_sylius_acl_plugin.context.privilege.composite"

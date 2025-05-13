@@ -1,0 +1,28 @@
+imports:
+    - { resource: "@BitBagSyliusAclPlugin/Resources/config/services/twig.yml" }
+    - { resource: "@BitBagSyliusAclPlugin/Resources/config/services/form.yml" }
+    - { resource: "@BitBagSyliusAclPlugin/Resources/config/services/event_listener.yml" }
+    - { resource: "@BitBagSyliusAclPlugin/Resources/config/services/checker.yml" }
+    - { resource: "@BitBagSyliusAclPlugin/Resources/config/services/privilege.yml" }
+    - { resource: "@BitBagSyliusAclPlugin/Resources/config/services/cache.yml" }
+
+services:
+    bitbag_sylius_acl_plugin.context.admin_user:
+        class: BitBag\SyliusAclPlugin\Context\AdminUserContext
+        arguments:
+            - "@security.token_storage"
+
+    bitbag_sylius_acl_plugin.resolver.admin_permission:
+        class: BitBag\SyliusAclPlugin\Resolver\AdminPermissionResolver
+        arguments:
+            - "@bitbag_sylius_acl_plugin.context.authorization_checker.composite"
+            - "@bitbag_sylius_acl_plugin.context.privilege.composite"
+            - "@bitbag_sylius_acl_plugin.context.admin_user"
+            - "@bitbag_sylius_acl_plugin.request_matcher.admin"
+            - "@request_stack"
+
+    bitbag_sylius_acl_plugin.request_matcher.admin:
+        class: Symfony\Component\HttpFoundation\RequestMatcher
+        arguments:
+            - "%sylius.security.admin_regex%"
+

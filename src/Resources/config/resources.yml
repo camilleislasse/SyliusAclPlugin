@@ -1,0 +1,12 @@
+sylius_resource:
+    resources:
+        bitbag_sylius_acl_plugin.role:
+            driver: doctrine/orm
+            classes:
+                model: BitBag\SyliusAclPlugin\Entity\Role
+                interface: BitBag\SyliusAclPlugin\Entity\RoleInterface
+                form: BitBag\SyliusAclPlugin\Form\Type\RoleType
+                repository: BitBag\SyliusAclPlugin\Repository\RoleRepository
+            translation:
+                classes:
+                    model: BitBag\SyliusAclPlugin\Entity\RoleTranslation

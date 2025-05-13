@@ -1,0 +1,45 @@
+services:
+    bitbag_sylius_acl_plugin.behat.context.ui.admin.acl:
+        class: Tests\BitBag\SyliusAclPlugin\Behat\Context\Ui\Admin\AclContext
+        public: true
+        arguments:
+            - "@behat.mink.default_session"
+            - "@sylius.behat.context.ui.admin.managing_products"
+            - "@sylius.behat.context.ui.admin.managing_orders"
+            - "@sylius.behat.shared_storage"
+            - "@sylius.behat.page.admin.product.update_simple"
+            - "@sylius.behat.page.admin.product.update_configurable"
+        tags:
+            - { name: fob.context_service }
+
+    bitbag_sylius_acl_plugin.behat.context.ui.admin.element:
+        class: Tests\BitBag\SyliusAclPlugin\Behat\Context\Ui\Admin\ElementContext
+        public: true
+        arguments:
+            - "@bitbag_sylius_acl_plugin.behat.element_checker"
+        tags:
+            - { name: fob.context_service }
+
+    bitbag_sylius_acl_plugin.behat.context.ui.admin.managing_administrators_roles:
+        class: Tests\BitBag\SyliusAclPlugin\Behat\Context\Ui\Admin\ManagingAdministratorsRolesContext
+        public: true
+        arguments:
+            - "@bitbag_sylius_acl_plugin.behat.page.admin.administrator.create"
+            - "@sylius.behat.current_page_resolver"
+            - "@sylius.repository.admin_user"
+        tags:
+            - { name: fob.context_service }
+
+    bitbag_sylius_acl_plugin.behat.context.ui.admin.role:
+        class: Tests\BitBag\SyliusAclPlugin\Behat\Context\Ui\Admin\RoleContext
+        public: true
+        arguments:
+            - "@sylius.behat.shared_storage"
+            - "@sylius.behat.current_page_resolver"
+            - "@sylius.behat.notification_checker"
+            - "@bitbag_sylius_acl_plugin.behat.page.admin.role.create"
+            - "@bitbag_sylius_acl_plugin.behat.page.admin.role.index"
+            - "@bitbag_sylius_acl_plugin.behat.page.admin.role.update"
+            - "@bitbag_sylius_acl_plugin.context.privilege.composite"
+        tags:
+            - { name: fob.context_service }

@@ -1,0 +1,20 @@
+services:
+    bitbag_sylius_acl_plugin.behat.context.setup.admin_user:
+        class: Tests\BitBag\SyliusAclPlugin\Behat\Context\Setup\AdminUserContext
+        public: true
+        arguments:
+            - "@sylius.behat.shared_storage"
+            - "@sylius.repository.admin_user"
+            - "@bitbag_sylius_acl_plugin.context.privilege.composite"
+        tags:
+            - { name: fob.context_service }
+
+    bitbag_sylius_acl_plugin.behat.context.setup.role:
+        class: Tests\BitBag\SyliusAclPlugin\Behat\Context\Setup\RoleContext
+        public: true
+        arguments:
+            - "@bitbag_sylius_acl_plugin.factory.role"
+            - "@bitbag_sylius_acl_plugin.repository.role"
+            - "@bitbag_sylius_acl_plugin.context.privilege.composite"
+        tags:
+            - { name: fob.context_service }

@@ -1,0 +1,10 @@
+BitBag\SyliusAclPlugin\Entity\RoleTranslation:
+    properties:
+        name:
+            - Length:
+                max: 250
+                maxMessage: bitbag_sylius_acl_plugin.role.name.max_length
+                groups: [bitbag]
+            - NotBlank:
+                message: bitbag_sylius_acl_plugin.role.name.not_blank
+                groups: [bitbag]

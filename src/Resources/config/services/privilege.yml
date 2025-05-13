@@ -1,0 +1,13 @@
+services:
+    bitbag_sylius_acl_plugin.privilege.resource:
+        class: BitBag\SyliusAclPlugin\Privilege\ResourcePrivilege
+        arguments:
+            - "@router"
+            - "%bitbag_sylius_acl_plugin.permissions%"
+        tags:
+            - { name: bitbag_sylius_acl_plugin.privilege }
+
+    bitbag_sylius_acl_plugin.context.privilege.composite:
+        class: BitBag\SyliusAclPlugin\Privilege\CompositePrivilege
+        arguments:
+            - "@bitbag_sylius_acl_plugin.cache.filesystem"

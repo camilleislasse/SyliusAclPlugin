@@ -1,0 +1,5 @@
+imports:
+    - { resource: "@BitBagSyliusAclPlugin/Resources/config/services.yml" }
+    - { resource: "@BitBagSyliusAclPlugin/Resources/config/resources.yml" }
+    - { resource: "@BitBagSyliusAclPlugin/Resources/config/grids.yml" }
+    - { resource: "@BitBagSyliusAclPlugin/Resources/config/permissions.yml" }

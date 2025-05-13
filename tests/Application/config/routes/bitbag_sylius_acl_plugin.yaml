@@ -1,0 +1,2 @@
+bitbag_sylius_acl_plugin:
+    resource: "@BitBagSyliusAclPlugin/Resources/config/routing.yml"

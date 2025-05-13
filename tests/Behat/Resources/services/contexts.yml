@@ -1,0 +1,12 @@
+imports:
+    - { resource: "contexts/setup.yml" }
+    - { resource: "contexts/ui.yml" }
+
+services:
+    bitbag_sylius_acl_plugin.behat.context.transform.role:
+        class: Tests\BitBag\SyliusAclPlugin\Behat\Context\Transform\RoleContext
+        public: true
+        arguments:
+            - "@bitbag_sylius_acl_plugin.repository.role"
+        tags:
+            - { name: fob.context_service }

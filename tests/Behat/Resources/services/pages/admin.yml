@@ -1,0 +1,26 @@
+services:
+    bitbag_sylius_acl_plugin.behat.page.admin.role.index:
+        class: Sylius\Behat\Page\Admin\Crud\IndexPage
+        parent: sylius.behat.page.admin.crud.index
+        public: false
+        arguments:
+            - 'bitbag_sylius_acl_plugin_admin_role_index'
+
+    bitbag_sylius_acl_plugin.behat.page.admin.role.create:
+        class: Tests\BitBag\SyliusAclPlugin\Behat\Page\Admin\Role\CreatePage
+        parent: sylius.behat.page.admin.crud.create
+        public: false
+        arguments:
+            - 'bitbag_sylius_acl_plugin_admin_role_create'
+
+    bitbag_sylius_acl_plugin.behat.page.admin.role.update:
+        class: Tests\BitBag\SyliusAclPlugin\Behat\Page\Admin\Role\UpdatePage
+        parent: sylius.behat.page.admin.crud.update
+        public: false
+        arguments:
+            - 'bitbag_sylius_acl_plugin_admin_role_update'
+
+    bitbag_sylius_acl_plugin.behat.page.admin.administrator.create:
+        class: Tests\BitBag\SyliusAclPlugin\Behat\Page\Admin\Administrator\CreatePage
+        parent: sylius.behat.page.admin.administrator.create
+        public: false

@@ -1,0 +1,18 @@
+imports:
+    - { resource: "services/contexts.yml" }
+    - { resource: "services/pages.yml" }
+
+services:
+    bitbag_sylius_acl_plugin.behat.accessor.element:
+        class: Tests\BitBag\SyliusAclPlugin\Behat\Service\Accessor\ElementAccessor
+        public: false
+        arguments:
+            - "@behat.mink.default_session"
+
+    bitbag_sylius_acl_plugin.behat.element_checker:
+        class: Tests\BitBag\SyliusAclPlugin\Behat\Service\ElementChecker
+        arguments:
+            - "@bitbag_sylius_acl_plugin.behat.accessor.element"
+
+    sylius.behat.context.hook.email_spool:
+        alias: sylius.behat.context.hook.mailer

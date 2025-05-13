@@ -1,0 +1,17 @@
+services:
+    bitbag_sylius_acl_plugin.cache.clearer.privileges:
+        class: BitBag\SyliusAclPlugin\Cache\Clearer\PrivilegesCacheClearer
+        arguments:
+            - "@bitbag_sylius_acl_plugin.cache.filesystem"
+        tags:
+            - { name: kernel.cache_clearer }
+
+    bitbag_sylius_acl_plugin.cache.warmer.privileges:
+        class: BitBag\SyliusAclPlugin\Cache\Warmer\PrivilegesCacheWarmer
+        arguments:
+            - "@bitbag_sylius_acl_plugin.cache.filesystem"
+        tags:
+            - { name: kernel.cache_warmer }
+
+    bitbag_sylius_acl_plugin.cache.filesystem:
+        class: Symfony\Component\Cache\Adapter\FilesystemAdapter

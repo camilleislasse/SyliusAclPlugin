@@ -1,0 +1,30 @@
+default:
+     suites:
+         ui_checking_customers_permissions:
+             contexts:
+                 - sylius.behat.context.hook.doctrine_orm
+
+                 - sylius.behat.context.transform.admin
+                 - sylius.behat.context.transform.shared_storage
+                 - sylius.behat.context.transform.customer
+
+                 - bitbag_sylius_acl_plugin.behat.context.transform.role
+
+                 - sylius.behat.context.setup.admin_user
+                 - sylius.behat.context.setup.admin_security
+                 - sylius.behat.context.setup.channel
+                 - sylius.behat.context.setup.customer
+                 - sylius.behat.context.setup.user
+                 - sylius.behat.context.setup.customer_group
+
+                 - bitbag_sylius_acl_plugin.behat.context.setup.role
+                 - bitbag_sylius_acl_plugin.behat.context.setup.admin_user
+
+                 - sylius.behat.context.ui.admin.notification
+                 - sylius.behat.context.ui.admin.dashboard
+                 - sylius.behat.context.ui.admin.managing_customers
+
+                 - bitbag_sylius_acl_plugin.behat.context.ui.admin.element
+                 - bitbag_sylius_acl_plugin.behat.context.ui.admin.acl
+             filters:
+                 tags: "@checking_customers_permissions && @ui"

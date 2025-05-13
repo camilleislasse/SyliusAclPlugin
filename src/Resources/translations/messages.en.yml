@@ -1,0 +1,95 @@
+bitbag_sylius_acl_plugin:
+    ui:
+        permission_management: Permission management
+        roles: Roles
+        permissions: Permissions
+        name: Name
+        role_header: Roles
+        role_subheader: Manage your roles
+        permissions_tree: Permissions tree
+        enabled_permission_checker: Enabled permission checker
+        select_all: Select all
+    parent:
+        channels: Channels
+        customers: Customers
+        orders: Orders
+        products: Products
+        promotions: Promotions
+        taxons: Taxons
+        taxa: Taxons
+        product_variants: Product variants
+        admin_users: Admin users
+        countries: Countries
+        currencies: Currencies
+        customer_groups: Customer groups
+        exchange_rates: Exchange rates
+        locales: Locales
+        payments: Payments
+        payment_methods: Payment methods
+        product_association_types: Product association types
+        product_attributes: Product attributes
+        product_options: Product options
+        product_reviews: Product reviews
+        promotion_coupons: Promotion coupons
+        shipments: Shipments
+        shipping_categories: Shipping categories
+        shipping_methods: Shipping methods
+        tax_categories: Tax categories
+        tax_rates: Tax rates
+        zones: Zones
+        roles: Roles
+        dashboard: Dashboard
+        inventory: Inventory
+        product_taxons: Product taxons
+        product_taxa: Product taxons
+        catalog_promotions: Catalog promotions
+    action:
+        index: Index
+        create: Create
+        update: Update
+        generate: Generate
+        bulk_delete: Bulk delete
+        delete: Delete
+        show: Show
+        archive: Archive
+        history: History
+        variant_generate: Variant generate
+        show_customer_orders: Show customer orders
+        create_simple: Create simple
+        product_review_accept: Product review accept
+        product_review_reject: Product review reject
+        order_cancel: Order cancel
+        payment_complete: Payment complete
+        payment_refund: Payment refund
+        shipment_ship: Shipment ship
+        impersonate_customer: Impersonate customer
+        create_for_parent: Create for parent
+        per_taxon_index: Per taxon index
+    partial:
+        catalog_promotion_show: Show catalog promotion (partial)
+        order_latest: Order latest (partial)
+        customer_latest: Cutomer latest (partial)
+        customer_show: Customer show (partial)
+        customer_orders_statistics: Customer orders statistics (partial)
+        order_latest_in_channel: Order latest in channel (partial)
+        taxon_tree: Taxon tree (partial)
+        taxon_show: Taxon show (partial)
+        address_log_entry_index: Address log entry index (partial)
+        product_show: Product Show (partial)
+        promotion_show: Promotion show (partial)
+        channel_index: Channel index (partial)
+    ajax:
+        taxon_root_nodes: Taxon root nodes
+        taxon_leafs: Taxon leafs
+        taxon_by_code: Get taxon by code (ajax)
+        taxon_by_name_phrase: Get taxon by phrase (ajax)
+        taxon_move: Taxon move
+        product_variants_update_position: Update position
+        product_variants_by_phrase: Get product variants by phrase (ajax)
+        product_variants_by_codes: Get product variants by codes (ajax)
+        product_by_name_phrase: Get product by name phrase (ajax)
+        product_by_code: Get product by code (ajax)
+        product_index: Product index (ajax)
+        product_taxons_update_position: Update position
+        all_product_variants_by_phrase: Get all product variants by phrase (ajax)
+        all_product_variants_by_codes: Get all product variants by codes (ajax)

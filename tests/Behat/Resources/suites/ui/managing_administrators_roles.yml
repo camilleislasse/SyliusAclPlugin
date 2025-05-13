@@ -1,0 +1,27 @@
+default:
+    suites:
+        ui_managing_administrators_roles:
+            contexts:
+                - sylius.behat.context.hook.doctrine_orm
+
+                - sylius.behat.context.transform.shared_storage
+                - sylius.behat.context.transform.lexical
+                - sylius.behat.context.transform.locale
+
+                - bitbag_sylius_acl_plugin.behat.context.transform.role
+
+                - sylius.behat.context.setup.channel
+                - sylius.behat.context.setup.locale
+                - sylius.behat.context.setup.admin_security
+                - sylius.behat.context.setup.admin_user
+
+                - bitbag_sylius_acl_plugin.behat.context.setup.role
+
+                - sylius.behat.context.ui.admin.dashboard
+                - sylius.behat.context.ui.admin.managing_administrators
+                - sylius.behat.context.ui.admin.notification
+                - sylius.behat.context.ui.admin.login
+
+                - bitbag_sylius_acl_plugin.behat.context.ui.admin.managing_administrators_roles
+            filters:
+                tags: "@managing_administrators_roles && @ui"

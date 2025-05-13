@@ -1,0 +1,15 @@
+services:
+    bitbag_sylius_acl_plugin.authorization_checker.permission:
+        class: BitBag\SyliusAclPlugin\Checker\PermissionChecker
+        arguments:
+            - "@bitbag_sylius_acl_plugin.context.admin_user"
+        tags:
+            - { name: bitbag_sylius_acl_plugin.authorization_checker }
+
+    bitbag_sylius_acl_plugin.context.authorization_checker.composite:
+        class: BitBag\SyliusAclPlugin\Checker\CompositeAuthorizationChecker
+
+    bitbag_sylius_acl_plugin.authorization_checker.resource:
+        class: BitBag\SyliusAclPlugin\Checker\ResourceAuthorizationChecker
+        arguments:
+            - "@bitbag_sylius_acl_plugin.resolver.admin_permission"

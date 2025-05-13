@@ -1,0 +1,22 @@
+sylius_resource:
+    authorization_checker: bitbag_sylius_acl_plugin.authorization_checker.resource
+
+sylius_user:
+    resources:
+        admin:
+            user:
+                classes:
+                    model: Tests\BitBag\SyliusAclPlugin\Entity\AdminUser
+
+services:
+    twig.extension.httpkernel:
+        class: BitBag\SyliusAclPlugin\Twig\HttpKernelExtension
+        arguments:
+            - "@twig.runtime.httpkernel"
+
+    twig.extension.routing:
+        class: BitBag\SyliusAclPlugin\Twig\RoutingExtension
+        public: false
+        arguments:
+            - "@router.default"
+            - "@bitbag_sylius_acl_plugin.resolver.admin_permission"

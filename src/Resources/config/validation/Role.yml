@@ -1,0 +1,17 @@
+BitBag\SyliusAclPlugin\Entity\Role:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [code]
+            groups: [bitbag]
+            message: bitbag_sylius_acl_plugin.role.code.unique
+    properties:
+        code:
+            - NotBlank:
+                message: bitbag_sylius_acl_plugin.role.code.not_blank
+                groups: [bitbag]
+            - Length:
+                max: 250
+                maxMessage: bitbag_sylius_acl_plugin.role.code.max_length
+                groups: [bitbag]
+        translations:
+            - Valid: ~

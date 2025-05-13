@@ -1,0 +1,39 @@
+{% from '@SyliusAdmin/Macro/translationForm.html.twig' import translationForm %}
+
+{{ form_errors(form) }}
+
+<div class="ui segment">
+    {{ form_row(form.code) }}
+</div>
+
+{{ translationForm(form.translations, resource) }}
+
+<div class="ui segment styled fluid accordion permissions">
+    {% for permission in form.permissions %}
+        <div class="permission" data-permissions>
+            <div class="permission__header--container">
+                <div class="permission__header--toggle">
+                    <label for="Toggle all">{{ 'bitbag_sylius_acl_plugin.ui.select_all'|trans }}</label>
+
+                    <div class="ui left toggle checkbox ">
+                        <input type="checkbox" name="Toggle all" tabindex="0" class="hidden" data-toggle-all>
+                    </div>
+                </div>
+
+                <span class="ui teal circular label" data-badge>0/0</span>
+            </div>
+
+            <div class="title permission__header">
+                <span>
+                    <i class="dropdown icon"></i>
+
+                    {{ permission.vars.label|trans }}
+                </span>
+            </div>
+
+            <div class="content" data-toggles>
+                {{ form_widget(permission) }}
+            </div>
+        </div>
+    {% endfor %}
+</div>

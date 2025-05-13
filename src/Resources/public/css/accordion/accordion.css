@@ -1,0 +1,24 @@
+.permissions {
+  padding: 0 !important;
+}
+
+.permission__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.permission__header--container {
+  min-width: 17rem;
+  padding: 1.2em 1.8em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  right: 0;
+}
+
+.permission__header--toggle {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

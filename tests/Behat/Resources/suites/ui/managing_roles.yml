@@ -1,0 +1,18 @@
+default:
+     suites:
+         ui_managing_roles:
+             contexts:
+                 - sylius.behat.context.hook.doctrine_orm
+
+                 - bitbag_sylius_acl_plugin.behat.context.transform.role
+
+                 - sylius.behat.context.setup.channel
+                 - sylius.behat.context.setup.admin_security
+
+                 - bitbag_sylius_acl_plugin.behat.context.setup.role
+
+                 - sylius.behat.context.ui.admin.notification
+
+                 - bitbag_sylius_acl_plugin.behat.context.ui.admin.role
+             filters:
+                 tags: "@managing_roles && @ui"

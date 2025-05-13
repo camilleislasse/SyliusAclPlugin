@@ -1,0 +1,9 @@
+bitbag_sylius_acl_plugin:
+    role:
+        code:
+            unique: There is an existing role with this code.
+            not_blank: Code cannot be blank.
+            max_length: Code can not be longer than {{ limit }} characters.
+        name:
+            not_blank: Name cannot be blank.
+            max_length: Name can not be longer than {{ limit }} characters.

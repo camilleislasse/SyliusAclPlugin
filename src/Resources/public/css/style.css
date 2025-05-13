@@ -1,0 +1,11 @@
+.menu a[href="ACCESS_DENIED"].item,
+form[action="ACCESS_DENIED"],
+a[href="ACCESS_DENIED"].button,
+a[data-url="ACCESS_DENIED"].button {
+    display: none !important;
+}
+
+a[href="ACCESS_DENIED"] {
+    pointer-events: none !important;
+    color: #0d0d0d !important;
+}

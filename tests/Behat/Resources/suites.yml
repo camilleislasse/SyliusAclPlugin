@@ -1,0 +1,6 @@
+imports:
+    - suites/ui/managing_roles.yml
+    - suites/ui/managing_administrators_roles.yml
+    - suites/ui/checking_orders_permissions.yml
+    - suites/ui/checking_products_permissions.yml
+    - suites/ui/checking_customers_permissions.yml

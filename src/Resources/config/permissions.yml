@@ -1,0 +1,37 @@
+bit_bag_sylius_acl:
+    permissions:
+        sylius_admin_partial_address_log_entry_index:
+            parent: orders
+            label: partial.address_log_entry_index
+        sylius_admin_partial_order_latest_in_channel:
+            parent: orders
+            label: partial.order_latest_in_channel
+        sylius_admin_customer_orders_statistics:
+            parent: customers
+            label: partial.customer_orders_statistics
+        sylius_admin_shop_user_delete:
+            parent: customers
+            label: action.delete
+        sylius_admin_inventory_index:
+            parent: inventory
+            label: action.index
+        sylius_admin_partial_shipment_ship:
+            enabled: false
+        sylius_admin_order_shipment_ship:
+            parent: orders
+            label: action.shipment_ship
+        sylius_admin_product_variant_generate:
+            parent: product_variants
+            label: action.variant_generate
+        sylius_admin_order_payment_complete:
+            parent: orders
+            label: action.payment_complete
+        sylius_admin_order_payment_refund:
+            parent: orders
+            label: action.payment_refund
+        sylius_admin_customer_order_index:
+            parent: orders
+            label: action.show_customer_orders
+        sylius_admin_impersonate_user:
+            parent: customers
+            label: action.impersonate_customer
