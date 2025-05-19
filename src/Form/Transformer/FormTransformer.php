@@ -27,7 +27,7 @@ final class FormTransformer implements DataTransformerInterface
     /**
      * @throws InvalidArgumentException
      */
-    public function transform($value)
+    public function transform(mixed $value): mixed
     {
         Assert::nullOrIsArray($value);
         $tree = $this->compositePrivilege->getSupportedRouteMap([], true);
@@ -47,7 +47,7 @@ final class FormTransformer implements DataTransformerInterface
     /**
      * @throws InvalidArgumentException
      */
-    public function reverseTransform($value)
+    public function reverseTransform(mixed $value): mixed
     {
         Assert::isArray($value, Collection::class);
 

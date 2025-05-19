@@ -2,7 +2,7 @@ bitbag_sylius_acl_admin_role:
     resource: |
         alias: bitbag_sylius_acl_plugin.role
         section: admin
-        templates: "@SyliusAdmin\\Crud"
+        templates: "@SyliusAdmin\\shared\\crud"
         redirect: update
         grid: bitbag_sylius_acl_plugin_admin_role
         except: ['show']
