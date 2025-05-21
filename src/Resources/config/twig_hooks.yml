@@ -1,0 +1,10 @@
+sylius_twig_hooks:
+    hooks:
+        'sylius_admin.admin_user.update.content.form.sections#left':
+            account:
+                template: '@SyliusAdmin/admin_user/form/sections/account.html.twig'
+                priority: 0
+            roles:
+                template: '@BitBagSyliusAclPlugin/Admin/roles.html.twig'
+                priority: -100
+#                enabled: false

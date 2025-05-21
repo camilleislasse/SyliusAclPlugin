@@ -1,0 +1,15 @@
+{% set form =  hookable_metadata.context.form %}
+    <div class="card-header">
+        <div class="card-title">
+            {{ 'sylius.ui.roles'|trans }}
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="mb-3 field">
+            {{ form_row(form.rolesResources) }}
+        </div>
+        <div class="mb-3 field">
+                {{ form_row(form.enablePermissionChecker) }}
+        </div>
+        </div>
+    </div>

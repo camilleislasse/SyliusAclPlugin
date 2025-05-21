@@ -22,7 +22,7 @@ services:
             - "@request_stack"
 
     bitbag_sylius_acl_plugin.request_matcher.admin:
-        class: Symfony\Component\HttpFoundation\RequestMatcher
+        class: Symfony\Component\HttpFoundation\RequestMatcher\ExpressionRequestMatcher
         arguments:
-            - "%sylius.security.admin_regex%"
-
+            $language: '@validator.expression_language'
+            $expression: "path matches '#%sylius.security.admin_regex%#'"
