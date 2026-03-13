@@ -30,7 +30,7 @@ final class PermissionManagementMenuBuilder
                 'route' => 'bitbag_sylius_acl_plugin_admin_role_index',
             ])
             ->setLabel('bitbag_sylius_acl_plugin.ui.roles')
-            ->setLabelAttribute('icon', 'key icon')
+            ->setLabelAttribute('icon', 'tabler:key')
         ;
     }
 }
